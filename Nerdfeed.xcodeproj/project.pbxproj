@@ -14,6 +14,7 @@
 		9CE0D1B11A6AAB8600FD6705 /* NerdfeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE0D1B01A6AAB8600FD6705 /* NerdfeedTests.m */; };
 		9CE0D1BC1A6AB3CF00FD6705 /* CoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE0D1BB1A6AB3CF00FD6705 /* CoursesViewController.m */; };
 		9CE0D1BF1A6AD43600FD6705 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE0D1BE1A6AD43600FD6705 /* WebViewController.m */; };
+		9CE0D1C11A6AF00D00FD6705 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CE0D1C01A6AF00D00FD6705 /* WebViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +42,7 @@
 		9CE0D1BB1A6AB3CF00FD6705 /* CoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesViewController.m; sourceTree = "<group>"; };
 		9CE0D1BD1A6AD43600FD6705 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
 		9CE0D1BE1A6AD43600FD6705 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		9CE0D1C01A6AF00D00FD6705 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +93,7 @@
 				9CE0D1941A6AAB8600FD6705 /* Supporting Files */,
 				9CE0D1BD1A6AD43600FD6705 /* WebViewController.h */,
 				9CE0D1BE1A6AD43600FD6705 /* WebViewController.m */,
+				9CE0D1C01A6AF00D00FD6705 /* WebViewController.xib */,
 			);
 			path = Nerdfeed;
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9CE0D1C11A6AF00D00FD6705 /* WebViewController.xib in Resources */,
 				9CE0D1A51A6AAB8600FD6705 /* LaunchScreen.xib in Resources */,
 				9CE0D1A21A6AAB8600FD6705 /* Images.xcassets in Resources */,
 			);

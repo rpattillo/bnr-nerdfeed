@@ -8,28 +8,59 @@
 
 #import "WebViewController.h"
 
+@interface WebViewController () <UIWebViewDelegate>
+
+@property (nonatomic, weak) IBOutlet UIWebView *webView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *previousButton;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *nextButton;
+
+@end
+
+
 @implementation WebViewController
-
-
-#pragma mark - Custom accessors
-
-- (void)setURL:(NSURL *)URL
-{
-   _URL = URL;
-   if (_URL) {
-      NSURLRequest *request = [NSURLRequest requestWithURL:_URL];
-      [(UIWebView *)self.view loadRequest:request];
-   }
-}
-
 
 #pragma mark - View life cycle
 
-- (void)loadView
+- (void)viewDidLoad
 {
-   UIWebView *webView = [[UIWebView alloc] init];
-   webView.scalesPageToFit = YES;
-   self.view = webView;
+   [super viewDidLoad];
+
+   self.edgesForExtendedLayout = UIRectEdgeNone;
+}
+
+
+- (void)viewWillAppear:(BOOL)animated
+{
+   [super viewWillAppear:animated];
+
+   NSURLRequest *request = [NSURLRequest requestWithURL:self.URL];
+   [self.webView loadRequest:request];
+
+   self.previousButton.enabled = self.webView.canGoBack;
+   self.nextButton.enabled = self.webView.canGoForward;
+}
+
+
+#pragma mark - XIB Actions
+
+- (IBAction)previous:(id)sender
+{
+   [self.webView goBack];
+}
+
+
+- (IBAction)next:(id)sender
+{
+   [self.webView goForward];
+}
+
+
+#pragma mark Web View Delegate protocol
+
+- (void)webViewDidFinishLoad:(UIWebView *)webView
+{
+   self.previousButton.enabled = self.webView.canGoBack;
+   self.nextButton.enabled = self.webView.canGoForward;
 }
 
 @end
