@@ -9,7 +9,7 @@
 #import "CoursesViewController.h"
 #import "WebViewController.h"
 
-@interface CoursesViewController ()
+@interface CoursesViewController () <NSURLSessionDataDelegate>
 
 @property (nonatomic, strong) NSURLSession *session;
 @property (nonatomic, copy) NSArray *courses;
@@ -29,7 +29,9 @@
       self.navigationItem.title = @"BNR Courses";
 
       NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
-      _session = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:nil];
+      _session = [NSURLSession sessionWithConfiguration:config
+                                               delegate:self
+                                          delegateQueue:nil];
 
       [self fetchFeed];
    }
@@ -85,7 +87,7 @@
 
 - (void)fetchFeed
 {
-   NSString *requestString = @"http://bookapi.bignerdranch.com/courses.json";
+   NSString *requestString = @"https://bookapi.bignerdranch.com/private/courses.json";
    NSURL *url = [NSURL URLWithString:requestString];
    NSURLRequest *request = [NSURLRequest requestWithURL:url];
 
@@ -101,6 +103,20 @@
          });
       }];
    [dataTask resume];
+}
+
+
+#pragma mark - URL Session delegate
+
+- (void)URLSession:(NSURLSession *)session
+              task:(NSURLSessionTask *)task
+didReceiveChallenge:(NSURLAuthenticationChallenge *)challenge
+ completionHandler:(void (^)(NSURLSessionAuthChallengeDisposition, NSURLCredential *))completionHandler
+{
+   NSURLCredential *cred = [NSURLCredential credentialWithUser:@"BigNerdRanch"
+                                                      password:@"AchieveNerdvana"
+                                                   persistence:NSURLCredentialPersistenceForSession];
+   completionHandler(NSURLSessionAuthChallengeUseCredential, cred);
 }
 
 
