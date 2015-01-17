@@ -50,6 +50,14 @@
 }
 
 
+- (void)viewWillAppear:(BOOL)animated
+{
+   [super viewWillAppear:animated];
+
+   self.navigationController.toolbarHidden = YES;
+}
+
+
 #pragma mark - Table View Datasource protocol
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
