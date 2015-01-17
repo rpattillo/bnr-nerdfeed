@@ -12,6 +12,7 @@
 		9CE0D1A21A6AAB8600FD6705 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CE0D1A11A6AAB8600FD6705 /* Images.xcassets */; };
 		9CE0D1A51A6AAB8600FD6705 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9CE0D1A31A6AAB8600FD6705 /* LaunchScreen.xib */; };
 		9CE0D1B11A6AAB8600FD6705 /* NerdfeedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE0D1B01A6AAB8600FD6705 /* NerdfeedTests.m */; };
+		9CE0D1BC1A6AB3CF00FD6705 /* CoursesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9CE0D1BB1A6AB3CF00FD6705 /* CoursesViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +36,8 @@
 		9CE0D1AA1A6AAB8600FD6705 /* NerdfeedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NerdfeedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CE0D1AF1A6AAB8600FD6705 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9CE0D1B01A6AAB8600FD6705 /* NerdfeedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NerdfeedTests.m; sourceTree = "<group>"; };
+		9CE0D1BA1A6AB3CF00FD6705 /* CoursesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoursesViewController.h; sourceTree = "<group>"; };
+		9CE0D1BB1A6AB3CF00FD6705 /* CoursesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoursesViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +81,8 @@
 			children = (
 				9CE0D1981A6AAB8600FD6705 /* AppDelegate.h */,
 				9CE0D1991A6AAB8600FD6705 /* AppDelegate.m */,
+				9CE0D1BA1A6AB3CF00FD6705 /* CoursesViewController.h */,
+				9CE0D1BB1A6AB3CF00FD6705 /* CoursesViewController.m */,
 				9CE0D1A11A6AAB8600FD6705 /* Images.xcassets */,
 				9CE0D1A31A6AAB8600FD6705 /* LaunchScreen.xib */,
 				9CE0D1941A6AAB8600FD6705 /* Supporting Files */,
@@ -211,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9CE0D19A1A6AAB8600FD6705 /* AppDelegate.m in Sources */,
+				9CE0D1BC1A6AB3CF00FD6705 /* CoursesViewController.m in Sources */,
 				9CE0D1971A6AAB8600FD6705 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
