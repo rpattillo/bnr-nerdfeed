@@ -7,6 +7,7 @@
 //
 
 #import "CoursesViewController.h"
+#import "WebViewController.h"
 
 @interface CoursesViewController ()
 
@@ -57,12 +58,26 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell" forIndexPath:indexPath];
+   UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UITableViewCell"
+                                                           forIndexPath:indexPath];
 
    NSDictionary *course = self.courses[indexPath.row];
    cell.textLabel.text = course[@"title"];
 
    return cell;
+}
+
+
+#pragma mark - Table View delegate protocol
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   NSDictionary *course = self.courses[indexPath.row];
+   NSURL *URL = [NSURL URLWithString:course[@"url"]];
+
+   self.webViewController.title = course[@"title"];
+   self.webViewController.URL = URL;
+   [self.navigationController pushViewController:self.webViewController animated:YES];
 }
 
 

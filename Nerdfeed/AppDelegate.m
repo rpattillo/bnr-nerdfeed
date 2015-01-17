@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "CoursesViewController.h"
+#import "WebViewController.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
    CoursesViewController *coursesVC = [[CoursesViewController alloc] initWithStyle:UITableViewStylePlain];
+   WebViewController *webVC = [[WebViewController alloc] init];
+   coursesVC.webViewController = webVC;
+
    UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:coursesVC];
 
    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
