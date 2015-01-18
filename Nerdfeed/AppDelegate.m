@@ -26,7 +26,20 @@
    UINavigationController *masterNav = [[UINavigationController alloc] initWithRootViewController:coursesVC];
 
    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-   self.window.rootViewController = masterNav;
+
+   if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
+      UINavigationController *detailNav = [[UINavigationController alloc] initWithRootViewController:webVC];
+
+      UISplitViewController *splitVC = [[UISplitViewController alloc] init];
+      splitVC.delegate = webVC;
+      splitVC.viewControllers = @[masterNav, detailNav];
+
+      self.window.rootViewController = splitVC;
+   }
+   else {
+      self.window.rootViewController = masterNav;
+   }
+
    [self.window makeKeyAndVisible];
 
    return YES;
